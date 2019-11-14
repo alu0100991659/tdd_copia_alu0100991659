@@ -13,4 +13,7 @@ class Alimentos
   def kcal
     @proteinas*4.0+@carbohidratos*4.0+@lipidos*9.0
   end
+  def to_s
+    "Nombre: #{@nombre}, Proteinas: #{@proteinas}, Carbohidratos: #{@carbohidratos}, Lipidos: #{@lipidos}, GEI: #{@gei}, Terreno: #{@terreno}, kcal: #{kcal.round(2)}"
+  end
 end
