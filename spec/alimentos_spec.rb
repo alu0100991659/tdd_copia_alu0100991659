@@ -27,5 +27,8 @@ RSpec.describe Alimentos do
     it "Tiene uso de terreno" do
       expect(@carneVaca).to have_attributes(:terreno => 82.0)
     end
+    it "Tiene kcal" do
+      expect(@carneVaca.kcal.round(2)).to eq(56.15)
+    end
   end
 end
