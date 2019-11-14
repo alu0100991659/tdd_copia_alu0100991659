@@ -9,4 +9,8 @@ class Alimentos
     @gei = gei*nPorciones
     @terreno = terreno*nPorciones
   end
+
+  def kcal
+    @proteinas*4.0+@carbohidratos*4.0+@lipidos*9.0
+  end
 end
