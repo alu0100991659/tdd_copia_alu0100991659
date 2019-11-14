@@ -24,5 +24,8 @@ RSpec.describe Alimentos do
     it "Tiene GEI" do
       expect(@carneVaca).to have_attributes(:gei => 25.0)
     end
+    it "Tiene uso de terreno" do
+      expect(@carneVaca).to have_attributes(:terreno => 82.0)
+    end
   end
 end
