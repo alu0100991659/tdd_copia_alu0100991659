@@ -30,5 +30,8 @@ RSpec.describe Alimentos do
     it "Tiene kcal" do
       expect(@carneVaca.kcal.round(2)).to eq(56.15)
     end
+    it "Tiene metodo para obtener la etiqueta formateada" do
+      expect(@carneVaca.to_s).to eq("Nombre: Carne de vaca, Proteinas: 10.55, Carbohidratos: 0.0, Lipidos: 1.55, GEI: 25.0, Terreno: 82.0, kcal: 56.15")
+    end
   end
 end
