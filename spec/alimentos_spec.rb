@@ -12,5 +12,8 @@ RSpec.describe Alimentos do
     it "Tiene porciones" do
       expect(@carneVaca).to have_attributes(:nPorciones => 0.5)
     end
+    it "Tiene proteinas" do
+      expect(@carneVaca).to have_attributes(:proteinas => 10.55)
+    end
   end
 end
