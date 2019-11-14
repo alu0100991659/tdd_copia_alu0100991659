@@ -18,5 +18,8 @@ RSpec.describe Alimentos do
     it "Tiene carbohidratos" do
       expect(@carneVaca).to have_attributes(:carbohidratos => 0.0)
     end
+    it "Tiene lípidos" do
+      expect(@carneVaca).to have_attributes(:lipidos => 1.55)
+    end
   end
 end
