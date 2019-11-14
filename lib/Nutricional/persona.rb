@@ -1,4 +1,6 @@
+require 'Nutricional/alimentos.rb'
+
 class Persona
-  def initialize
+  def initialize(nombre)
   end
 end
