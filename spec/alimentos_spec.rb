@@ -10,7 +10,7 @@ RSpec.describe Alimentos do
     @cerdo = Alimentos.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 2.0, 1.0)
     @pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 1.0)
 
-    @alberto = Persona.new("Alberto")
+    @alberto = Persona.new("Alberto", "Hombre")
   end
 
   context "Pruebas básicas para los alimentos" do
@@ -46,6 +46,9 @@ RSpec.describe Alimentos do
   context "Pruebas básicas para trabajar con menus para personas" do
     it "Tiene nombre" do
       expect(@alberto).to have_attributes(:nombre => "Alberto")
+    end
+    it "Tiene sexo" do
+      expect(@alberto).to have_attributes(:sexo => "Hombre")
     end
   end
 end
