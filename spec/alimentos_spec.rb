@@ -6,5 +6,8 @@ RSpec.describe Alimentos do
   end
 
   context "Pruebas básicas para los alimentos" do
+    it "Tiene nombre" do
+      expect(@carneVaca).to have_attributes(:nombre => "Carne de vaca")
+    end
   end
 end
