@@ -25,9 +25,9 @@ class Persona
 
   def menuValido
     if (sexo == "Hombre")
-      return kcalMenu.round == 3000
+      return (kcalMenu.round == 3000 && proteinasMenu > 54.0)
     else
-      return kcalMenu.round == 2300
+      return (kcalMenu.round == 2300 && proteinasMenu > 41.0)
     end
   end
 end
