@@ -62,5 +62,8 @@ RSpec.describe Alimentos do
     it "Tiene metodo para comprobar si un menú es válido" do
       expect(@alberto.menuValido).to eq(true)
     end
+    it "Tiene metodo que calcula la huella ambiental del menu" do
+      expect(@alberto.huellaAmbiental).to eq("GEI: 98.8642, Uso de terreno: 967.5326")
+    end
   end
 end
