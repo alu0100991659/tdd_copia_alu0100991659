@@ -3,14 +3,14 @@ require 'spec_helper'
 RSpec.describe Alimentos do
   before :all do
     @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 0.5)
-    @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 1.0)
+    @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
     @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 1.0)
     @chocolate = Alimentos.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4, 1.0)
-    @salmon = Alimentos.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7, 1.0)
+    @salmon = Alimentos.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7, 5.0)
     @cerdo = Alimentos.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 2.0, 1.0)
-    @pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 1.0)
+    @pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 2.906)
 
-    @alberto = Persona.new("Alberto", "Hombre")
+    @alberto = Persona.new("Alberto", "Hombre", [@carneCordero,@chocolate,@salmon,@pollo])
   end
 
   context "Pruebas básicas para los alimentos" do
@@ -49,6 +49,9 @@ RSpec.describe Alimentos do
     end
     it "Tiene sexo" do
       expect(@alberto).to have_attributes(:sexo => "Hombre")
+    end
+    it "tiene un menu" do
+      expect(@alberto).to have_attributes(:menu => [@carneCordero,@chocolate,@salmon,@pollo])
     end
   end
 end
