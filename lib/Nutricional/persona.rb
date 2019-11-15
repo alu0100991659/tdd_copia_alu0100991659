@@ -14,6 +14,15 @@ class Persona
     end
     return kcal
   end
+
+  def proteinasMenu
+    proteinas = 0.0
+    @menu.each do |i|
+      proteinas += i.proteinas
+    end
+    return proteinas
+  end
+
   def menuValido
     if (sexo == "Hombre")
       return kcalMenu.round == 3000
