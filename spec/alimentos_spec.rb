@@ -6,12 +6,12 @@ RSpec.describe Alimentos do
     @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
     @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 2.02)
     @chocolate = Alimentos.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4, 1.0)
-    @salmon = Alimentos.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7, 5.0)
+    @salmon = Alimentos.new("Salmon", 19.9, 0.0, 13.6, 6.0, 3.7, 5.0)
     @cerdo = Alimentos.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 2.0, 1.0)
     @pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 2.906)
 
     @alberto = Persona.new("Alberto", "Hombre", [@carneCordero,@chocolate,@salmon,@pollo])
-    @laura = Persona.new("Alberto", "Mujer", [@carneCordero,@salmon,@camarones])
+    @laura = Persona.new("Laura", "Mujer", [@carneCordero,@salmon,@camarones])
   end
 
   context "Pruebas básicas para los alimentos" do
@@ -68,7 +68,11 @@ RSpec.describe Alimentos do
     end
     it "Tiene metodo que calcula la huella ambiental del menu" do
       expect(@alberto.huellaAmbiental).to eq("GEI: 98.8642, Uso de terreno: 967.5326")
-      expect(@laura.huellaAmbiental).to eq("GEI: 98.8642, Uso de terreno: 967.5326")
+      expect(@laura.huellaAmbiental).to eq("GEI: 116.36, Uso de terreno: 947.54")
+    end
+    it "Tiene metodo para obtener la etiqueta formateada" do
+      expect(@alberto.to_s).to eq("Nombre: Alberto, Sexo: Hombre, Menu: Carne de cordero, Chocolate, Salmon, Pollo,")
+      expect(@laura.to_s).to eq("Nombre: Laura, Sexo: Mujer, Menu: Carne de cordero, Salmon, Camarones,")
     end
   end
 end
