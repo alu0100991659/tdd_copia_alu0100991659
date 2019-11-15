@@ -56,6 +56,9 @@ RSpec.describe Alimentos do
     it "Tiene metodo que calcula kcal totales" do
       expect(@alberto.kcalMenu.round).to eq(3000)
     end
+    it "Tiene metodo que calcula proteinas totales" do
+      expect(@alberto.proteinasMenu.round(2)).to eq(254.66)
+    end
     it "Tiene metodo para comprobar si un menú es válido" do
       expect(@alberto.menuValido).to eq(true)
     end

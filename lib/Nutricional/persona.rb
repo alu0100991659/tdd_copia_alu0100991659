@@ -14,7 +14,6 @@ class Persona
     end
     return kcal
   end
-
   def menuValido
     if (sexo == "Hombre")
       return kcalMenu.round == 3000
