@@ -7,4 +7,11 @@ class Persona
     @sexo = sexo
     @menu = menu
   end
+  def kcalMenu
+    kcal = 0.0
+    @menu.each do |i|
+      kcal += i.kcal
+    end
+    return kcal
+  end
 end
