@@ -53,5 +53,8 @@ RSpec.describe Alimentos do
     it "tiene un menu" do
       expect(@alberto).to have_attributes(:menu => [@carneCordero,@chocolate,@salmon,@pollo])
     end
+    it "Tiene metodo que calcula kcal totales" do
+      expect(@alberto.kcalMenu.round).to eq(3000)
+    end
   end
 end
