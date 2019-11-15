@@ -30,4 +30,18 @@ class Persona
       return (kcalMenu.round == 2300 && proteinasMenu > 41.0)
     end
   end
+
+  def huellaAmbiental
+    if (menuValido == true)
+      gei = 0.0
+      terreno = 0.0
+      @menu.each do |i|
+        gei += i.gei
+        terreno += i.terreno
+      end
+      return "GEI: #{gei}, Uso de terreno: #{terreno}"
+    else
+      return "El sujeto no es valido pues no consume la cantidad diaria reomendada"
+    end
+  end
 end
