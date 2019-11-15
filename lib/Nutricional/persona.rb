@@ -44,4 +44,12 @@ class Persona
       return "El sujeto no es valido pues no consume la cantidad diaria reomendada"
     end
   end
+
+  def to_s
+    cadena = "Nombre: #{@nombre}, Sexo: #{@sexo}, Menu:"
+    @menu.each do |i|
+      cadena += " #{i.nombre},"
+    end
+    return cadena
+  end
 end
