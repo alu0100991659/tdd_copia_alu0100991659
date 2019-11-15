@@ -4,13 +4,14 @@ RSpec.describe Alimentos do
   before :all do
     @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 0.5)
     @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
-    @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 1.0)
+    @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 2.02)
     @chocolate = Alimentos.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4, 1.0)
     @salmon = Alimentos.new("Salmón", 19.9, 0.0, 13.6, 6.0, 3.7, 5.0)
     @cerdo = Alimentos.new("Cerdo", 21.5, 0.0, 6.3, 7.6, 2.0, 1.0)
     @pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 2.906)
 
     @alberto = Persona.new("Alberto", "Hombre", [@carneCordero,@chocolate,@salmon,@pollo])
+    @laura = Persona.new("Alberto", "Mujer", [@carneCordero,@salmon,@camarones])
   end
 
   context "Pruebas básicas para los alimentos" do
@@ -55,15 +56,19 @@ RSpec.describe Alimentos do
     end
     it "Tiene metodo que calcula kcal totales" do
       expect(@alberto.kcalMenu.round).to eq(3000)
+      expect(@laura.kcalMenu.round).to eq(2300)
     end
     it "Tiene metodo que calcula proteinas totales" do
-      expect(@alberto.proteinasMenu.round(2)).to eq(254.66)
+      expect(@alberto.proteinasMenu.round(2)).to be > 54.0
+      expect(@laura.proteinasMenu.round(2)).to be > 41.0
     end
     it "Tiene metodo para comprobar si un menú es válido" do
       expect(@alberto.menuValido).to eq(true)
+      expect(@laura.menuValido).to eq(true)
     end
     it "Tiene metodo que calcula la huella ambiental del menu" do
       expect(@alberto.huellaAmbiental).to eq("GEI: 98.8642, Uso de terreno: 967.5326")
+      expect(@laura.huellaAmbiental).to eq("GEI: 98.8642, Uso de terreno: 967.5326")
     end
   end
 end
