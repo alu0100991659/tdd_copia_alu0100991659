@@ -59,5 +59,8 @@ RSpec.describe Lista do
     it "Pruebas para enumerable, collect" do
       expect(@lista1.collect { |i| i.to_s}).to eq(["#{@camarones}", "#{@carneCordero}", "#{@carneVaca}"])
     end
+    it "Pruebas para enumerable etiquetas, select" do
+      expect(@lista1.select { |i| i.between?(@carneVaca,@carneCordero)}).to eq([@camarones, @carneCordero, @carneVaca])
+    end
   end
 end
