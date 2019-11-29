@@ -111,5 +111,8 @@ RSpec.describe Plato do
     it "Etiqueta formateada" do
       expect(@plato1.to_s).to eq("#{@camarones.to_s}, #{@carneCordero.to_s}, #{@carneVaca}, ")
     end
+    it "Emisiones de C02" do
+      expect(@plato1.gei).to eq(111.36)
+    end
   end
 end
