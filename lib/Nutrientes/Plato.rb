@@ -42,4 +42,16 @@ class Plato < Lista
       return y
     end
 
+    def gei
+      x = collect{|a| a.gei}
+      y = x.inject(0, :+)
+      y.round(3)
+    end
+
+    def terreno
+      x = collect{|a| a.terreno}
+      y = x.inject(0, :+)
+      y.round(3)
+    end
+
 end
