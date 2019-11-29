@@ -26,6 +26,12 @@ class Plato < Lista
         return ((gramosProteinas*100)/gramosTotales).round(3)
     end
 
+    def kcal
+        x = collect{|a| a.kcal}
+        y = x.inject(0, :+)
+        y.round(3)
+    end
+
     def to_s
       x = collect{|a| a.nombre + ", "}
       y = x.inject("", :+)
