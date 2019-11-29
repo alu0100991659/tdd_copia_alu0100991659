@@ -1,7 +1,6 @@
 require "Nutrientes/version"
 
 class Plato < Lista
-    include Comparable
 
     def p_proteinas
         x = collect{|a| 100.0*a.nPorciones}
