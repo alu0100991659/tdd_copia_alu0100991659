@@ -11,7 +11,7 @@ RSpec.describe Alimentos do
 
   context "Puebas para comparar dos alimentos" do
     it "Prueba para comparable menor" do
-      expect(@carneCordero < @carneVaca).to eq(true)
+      expect(@carneCordero < @carneVaca).to eq(false)
     end
   end
 end
