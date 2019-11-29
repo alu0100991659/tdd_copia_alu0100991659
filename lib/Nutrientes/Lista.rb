@@ -1,9 +1,9 @@
-require "NutrientesEdu/version"
+require "Nutrientes/version"
 
  Node = Struct.new(:value, :next, :prev)
 
   class Lista
-    
+
     include Comparable
     attr_reader :head, :tail
 

@@ -1,3 +1,5 @@
+require "Nutrientes/version"
+
 class Alimentos
   attr_reader :nombre, :nPorciones, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
   def initialize(nombre,proteinas,carbohidratos,lipidos,gei,terreno,nPorciones)
