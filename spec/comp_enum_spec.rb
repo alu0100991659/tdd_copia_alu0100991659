@@ -90,6 +90,9 @@ RSpec.describe Plato do
   end
 
   context "Pruebas para platos" do
+    it "Es una lista" do
+      expect(@plato1.is_a? Lista).to eq(true)
+    end
     it "Obteniendo nombre de un plato" do
       expect(@plato1.nombre).to eq("Miscelanea")
     end
