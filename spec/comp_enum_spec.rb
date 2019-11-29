@@ -22,5 +22,8 @@ RSpec.describe Alimentos do
     it "Prueba para comparable mayor o igual" do
       expect(@carneCordero >= @carneVaca).to eq(true)
     end
+    it "Prueba para comparable igual" do
+      expect(@carneCordero == @carneCordero).to eq(true)
+    end
   end
 end
