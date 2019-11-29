@@ -36,4 +36,10 @@ class Plato < Lista
         y.round(3)
     end
 
+    def to_s
+      x = collect{|a| a.to_s + ", "}
+      y = x.inject("", :+)
+      return y
+    end
+
 end
