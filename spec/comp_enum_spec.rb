@@ -93,5 +93,8 @@ RSpec.describe Plato do
     it "Obteniendo nombre de un plato" do
       expect(@plato1.to_s).to eq("Camarones, Carne de cordero, Carne de vaca, ")
     end
+    it "Existe un conjunto de alimentos" do
+      expect(@plato1.collect { |i| i.to_s}).to eq(["#{@camarones}", "#{@carneCordero}", "#{@carneVaca}"])
+    end
   end
 end
