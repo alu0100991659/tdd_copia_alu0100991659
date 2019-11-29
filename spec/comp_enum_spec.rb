@@ -102,5 +102,8 @@ RSpec.describe Plato do
     it "Porcentaje lipidos" do
       expect(@plato1.p_lipidos).to eq(11.67)
     end
+    it "Porcentaje carbohidratos" do
+      expect(@plato1.p_carbs).to eq(0.403)
+    end
   end
 end
