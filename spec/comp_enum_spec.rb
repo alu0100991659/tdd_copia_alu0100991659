@@ -114,5 +114,8 @@ RSpec.describe Plato do
     it "Emisiones de C02" do
       expect(@plato1.gei).to eq(111.36)
     end
+    it "Uso del terreno" do
+      expect(@plato1.terreno).to eq(1011.04)
+    end
   end
 end
