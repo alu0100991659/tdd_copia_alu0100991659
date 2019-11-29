@@ -73,3 +73,25 @@ RSpec.describe Lista do
     end
   end
 end
+
+RSpec.describe Plato do
+  it "has a version number" do
+    expect(Plato::VERSION).not_to be nil
+  end
+
+  before :all do
+    @plato1 = Plato.new()
+    @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 0.5)
+    @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
+    @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 2.02)
+    @plato1.push_head(@carneVaca)
+    @plato1.push_head(@carneCordero)
+    @plato1.push_head(@camarones)
+  end
+
+  context "Pruebas para platos" do
+    it "Obteniendo nombre de un plato" do
+      expect(@plato1.to_s).to eq("Camarones, Carne de cordero, Carne de vaca, ")
+    end
+  end
+end

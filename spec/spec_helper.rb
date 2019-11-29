@@ -18,6 +18,7 @@ require "bundler/setup"
 require "Nutrientes/Alimentos"
 require "Nutrientes/Persona"
 require "Nutrientes/Lista"
+require "Nutrientes/Plato"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

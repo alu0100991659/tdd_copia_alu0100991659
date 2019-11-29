@@ -1,5 +1,4 @@
 require "Nutrientes/version"
-require 'Nutrientes/alimentos.rb'
 
 class Persona
   attr_reader :nombre, :sexo, :menu
