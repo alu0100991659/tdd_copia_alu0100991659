@@ -5,7 +5,7 @@ RSpec.describe Alimentos do
   end
 
   before :all do
-    @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 0.5)
+    @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 1)
     @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
   end
 
@@ -24,6 +24,10 @@ RSpec.describe Alimentos do
     end
     it "Prueba para comparable igual" do
       expect(@carneCordero == @carneCordero).to eq(true)
+    end
+    it "Prueba para comparable between" do
+      pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 1)
+      expect(@carneVaca.between?(pollo,@carneCordero)).to eq(false)
     end
   end
 end
