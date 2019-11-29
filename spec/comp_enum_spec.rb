@@ -96,5 +96,8 @@ RSpec.describe Plato do
     it "Existe un conjunto de alimentos" do
       expect(@plato1.collect { |i| i.to_s}).to eq(["#{@camarones}", "#{@carneCordero}", "#{@carneVaca}"])
     end
+    it "Porcentaje Proteinas" do
+      expect(@plato1.p_proteinas).to eq(18.099)
+    end
   end
 end
