@@ -4,7 +4,9 @@ require "Nutrientes/version"
 
   class Lista
 
+    include Enumerable
     include Comparable
+
     attr_reader :head, :tail
 
     def push_head(value)
@@ -65,5 +67,13 @@ require "Nutrientes/version"
         s = ""
         each {|i| s += "#{i.to_s}\n"}
         s
+    end
+
+    def each
+      x = @head
+      while(x != nil)
+        yield x.value
+        x = x.next
+      end
     end
   end
