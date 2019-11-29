@@ -80,7 +80,7 @@ RSpec.describe Plato do
   end
 
   before :all do
-    @plato1 = Plato.new()
+    @plato1 = Plato.new("Miscelanea")
     @carneVaca = Alimentos.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0, 0.5)
     @carneCordero = Alimentos.new("Carne de cordero", 18.0, 0.0, 17.0, 10.0, 185.0, 5.0)
     @camarones = Alimentos.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0, 2.02)
@@ -91,7 +91,7 @@ RSpec.describe Plato do
 
   context "Pruebas para platos" do
     it "Obteniendo nombre de un plato" do
-      expect(@plato1.to_s).to eq("Camarones, Carne de cordero, Carne de vaca, ")
+      expect(@plato1.nombre).to eq("Miscelanea")
     end
     it "Existe un conjunto de alimentos" do
       expect(@plato1.collect { |i| i.to_s}).to eq(["#{@camarones}", "#{@carneCordero}", "#{@carneVaca}"])
@@ -107,6 +107,9 @@ RSpec.describe Plato do
     end
     it "Kcal del plato" do
       expect(@plato1.kcal).to eq(1346.386)
+    end
+    it "Etiqueta formateada" do
+      expect(@plato1.to_s).to eq("#{@camarones.to_s}, #{@carneCordero.to_s}, #{@carneVaca}, ")
     end
   end
 end

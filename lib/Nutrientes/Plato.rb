@@ -1,6 +1,10 @@
 require "Nutrientes/version"
 
 class Plato < Lista
+    attr_reader :nombre
+    def initialize(nombre)
+      @nombre = nombre
+    end
 
     def p_proteinas
         x = collect{|a| 100.0*a.nPorciones}
@@ -30,12 +34,6 @@ class Plato < Lista
         x = collect{|a| a.kcal}
         y = x.inject(0, :+)
         y.round(3)
-    end
-
-    def to_s
-      x = collect{|a| a.nombre + ", "}
-      y = x.inject("", :+)
-      return y
     end
 
 end
