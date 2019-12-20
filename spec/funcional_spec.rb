@@ -36,9 +36,17 @@ RSpec.describe PlatoHuella do
   end
 
   context "Pruebas para platos con huella nutricional" do
+
     it "Prueba para hallar plato con max huella de menú" do
       menu = [@platoEntrante,@platoPrincipal,@platoPostre]
       expect(menu.max.nombre).to eq ("Plato principal")
+    end
+
+    it "Prueba para incrementar el precio de los platos en proporcion al de mayor huella ambiental" do
+      menu = [@platoEntrante,@platoPrincipal,@platoPostre]
+      precios = [7.4, 35.6, 10.9]
+      precios = precios.map {|a| (a*menu.max.huellaAmbiental).round(2)}
+      expect(precios).to eq ([11.1, 53.4, 16.35])
     end
   end
 end
