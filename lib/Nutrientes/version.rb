@@ -13,3 +13,11 @@ end
 class Lista
   VERSION = "0.1.0"
 end
+
+class Plato
+  VERSION = "0.1.0"
+end
+
+class PlatoHuella < Plato
+  VERSION = "0.1.0"
+end
