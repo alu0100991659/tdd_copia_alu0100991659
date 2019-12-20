@@ -1,12 +1,17 @@
 require "Nutrientes/version"
 
+# Clase para trabajar con nutricion y huella ambiental de personas
 class Persona
   attr_reader :nombre, :sexo, :menu
+
+  # Constructor de la clase
   def initialize(nombre,sexo,menu)
     @nombre = nombre
     @sexo = sexo
     @menu = menu
   end
+
+  # KiloCalorias del menu
   def kcalMenu
     kcal = 0.0
     @menu.each do |i|
@@ -15,6 +20,7 @@ class Persona
     return kcal
   end
 
+  # Proteinas del menu
   def proteinasMenu
     proteinas = 0.0
     @menu.each do |i|
@@ -23,6 +29,7 @@ class Persona
     return proteinas
   end
 
+  # Indica si un menu dado es valido o no
   def menuValido
     if (sexo == "Hombre")
       return (kcalMenu.round == 3000 && proteinasMenu > 54.0)
@@ -31,6 +38,7 @@ class Persona
     end
   end
 
+  # Huella ambiental de una persona
   def huellaAmbiental
     if (menuValido == true)
       gei = 0.0
@@ -45,6 +53,7 @@ class Persona
     end
   end
 
+  # Etiqueta formateada
   def to_s
     cadena = "Nombre: #{@nombre}, Sexo: #{@sexo}, Menu:"
     @menu.each do |i|

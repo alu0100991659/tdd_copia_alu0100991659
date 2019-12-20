@@ -2,12 +2,14 @@ require "Nutrientes/version"
 
  Node = Struct.new(:value, :next, :prev)
 
+  # Clase para trabajar con listas
   class Lista
 
     include Enumerable
 
     attr_reader :head, :tail
 
+    # Metodo para insertar un elemento por el head
     def push_head(value)
       if(@head == nil)
         node=Node.new(value,nil,nil)
@@ -22,6 +24,7 @@ require "Nutrientes/version"
       end
     end
 
+    # Metodo para insertar un elemento por el tail
     def push_tail(value)
       if(@tail == nil)
         node=Node.new(value,nil,nil)
@@ -34,6 +37,7 @@ require "Nutrientes/version"
       end
     end
 
+    # Metodo para extraer un elemento por el head
     def pop_head()
       if(@head == nil)
         return nil
@@ -48,6 +52,7 @@ require "Nutrientes/version"
       end
     end
 
+    # Metodo para extraer un elemento por el tail
     def pop_tail()
       if(@tail == nil)
         return nil
@@ -62,12 +67,14 @@ require "Nutrientes/version"
       end
     end
 
+    # Etiqueta formateada
     def to_s
         s = ""
         each {|i| s += "#{i.to_s}\n"}
         s
     end
 
+    # Metodo each
     def each
       x = @head
       while(x != nil)
