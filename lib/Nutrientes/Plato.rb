@@ -2,6 +2,8 @@ require "Nutrientes/version"
 
 class Plato
 
+    include Comparable
+
     attr_reader :ingredientes, :nombre, :grTotal, :grProteinas, :grCarbohidratos, :grLipidos
 
     def initialize(nombre,ingredientes)

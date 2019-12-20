@@ -5,7 +5,6 @@ require "Nutrientes/version"
   class Lista
 
     include Enumerable
-    include Comparable
 
     attr_reader :head, :tail
 
