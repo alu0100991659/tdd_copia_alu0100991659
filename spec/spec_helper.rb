@@ -13,7 +13,8 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
+require 'coveralls'
+Coveralls.wear!
 require "bundler/setup"
 require "Nutrientes/Alimentos"
 require "Nutrientes/Persona"
@@ -22,6 +23,7 @@ require "Nutrientes/Plato"
 require "Nutrientes/PlatoHuella"
 require "Nutrientes/PlatoDSL"
 require "Nutrientes/MenuDSL"
+
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
