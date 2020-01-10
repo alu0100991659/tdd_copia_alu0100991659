@@ -1,5 +1,6 @@
 require "Nutrientes/version"
 
+
 # Clase para trabajar con informacion nutricional y ambiental de alimentos
 class Alimentos
 
