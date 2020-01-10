@@ -19,3 +19,34 @@ RSpec.describe PlatoDSL do
   end
 
 end
+
+RSpec.describe MenuDSL do
+  before :each do
+    pollo = Alimentos.new("Pollo", 20.6, 0.0, 5.6, 5.7, 7.1, 1.0)
+    chocolate = Alimentos.new("Chocolate", 5.3, 47.0, 30.0, 2.3, 3.4, 1.0)
+    cafe = Alimentos.new("Cafe", 0.1, 0.0, 0.0, 0.4, 1.0, 1.0)
+
+    primerPlato = PlatoDSL.new("Primer Plato") do
+      nombre_plato  "Pollo frito"
+      alimento    :objetoAlimento => pollo, :gramos => 70
+    end
+
+    postre = PlatoDSL.new("Postre") do
+      nombre_plato "Cafe con chocolate"
+      alimento :objetoAlimento => cafe, :gramos => 10
+      alimento :objetoAlimento => chocolate, :gramos => 20
+    end
+
+    @menudsl = MenuDSL.new("Menu Especial") do
+      descripcion "Pollo frito con Chocolate y Cafe"
+      componente :plato => primerPlato, :precio => 12.0
+      componente :plato => postre, :precio => 3.0
+    end
+  end
+
+  context "Etiqueta formateada del menu" do
+    it "Prueba para comprobar que se obtiene la etiqueta formateada de un menu." do
+      expect(@menudsl.to_s).to eq("Menu Especial de Pollo frito con Chocolate y Cafe, Platos:  Primer Plato: Pollo frito (12.0),  Postre: Cafe con chocolate (3.0), Precio: 15.0, Kcal: 434.4, Huella Ambiental: 1.0")
+    end
+  end
+end
