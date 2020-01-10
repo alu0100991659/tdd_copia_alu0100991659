@@ -5,7 +5,7 @@ class Alimentos
 
   include Comparable
 
-  attr_reader :nombre, :nPorciones, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
+  attr_accessor :nombre, :nPorciones, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
 
   # Constructor de la clase
   def initialize(nombre,proteinas,carbohidratos,lipidos,gei,terreno,nPorciones)

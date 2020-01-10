@@ -20,6 +20,8 @@ require "Nutrientes/Persona"
 require "Nutrientes/Lista"
 require "Nutrientes/Plato"
 require "Nutrientes/PlatoHuella"
+require "Nutrientes/PlatoDSL"
+require "Nutrientes/MenuDSL"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

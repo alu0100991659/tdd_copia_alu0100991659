@@ -51,7 +51,7 @@ class Plato
 
     # Etiqueta formateada
     def to_s
-      "Nombre: #{@nombr}, Kcal: #{kcalPlato}, Gramos Totales:  #{@grTotal}, Gramos Proteinas: #{@grProteinas}, Gramos Carboidratos: #{@grCarbohidratos}, Gramos Lipidos: #{@grLipidos}"
+      "Nombre: #{@nombre}, Kcal: #{kcalPlato}, Gramos Totales:  #{@grTotal}, Gramos Proteinas: #{@grProteinas}, Gramos Carboidratos: #{@grCarbohidratos}, Gramos Lipidos: #{@grLipidos}"
     end
 
 end

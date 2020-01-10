@@ -21,3 +21,11 @@ end
 class PlatoHuella < Plato
   VERSION = "0.1.0"
 end
+
+class MenuDSL
+  VERSION = "0.1.0"
+end
+
+class PlatoDSL
+  VERSION = "0.1.0"
+end
